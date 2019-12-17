@@ -14,6 +14,14 @@
   margin: 20px 0px 0px 0px;
 }
 
+.back-btn {
+  color: #333;
+}
+
+.back-btn:hover {
+  color: #333;
+}
+
 .form-head {
   margin: 0px 0px 20px 0px;
 }

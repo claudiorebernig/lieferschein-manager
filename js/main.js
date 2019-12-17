@@ -76,11 +76,29 @@ function start() {
     }
     tablerow += `</td>`;
     tablerow += `<td>`;
-    tablerow += ` <i class="fas fa-lg fa-info-circle" style="color: #007bff;"></i>`;
-    tablerow += ` <i class="fas fa-lg fa-trash-alt" style="color: #dc3545"></i>`;
+    tablerow += `<i class="fas fa-lg fa-info-circle" style="color: #007bff;"></i>`;
+    tablerow += `<i class="fas fa-lg fa-trash-alt" style="color: #dc3545"></i>`;
+    tablerow += `<i class="fas fa-lg fa-print"></i>`;
+    tablerow += `<i class="fas fa-lg fa-check-square" style="color: #28a745"></i>`;
     tablerow += ` </td>`;
     tablerow += ` </tr>`;
 
     $(tablerow).appendTo(tablebody);
   }
 }
+
+$(document).ready(function() {
+  $('#customerInput').on('keyup', function() {
+    var value = $(this)
+      .val()
+      .toLowerCase();
+    $('#tablebody tr').filter(function() {
+      $(this).toggle(
+        $(this)
+          .text()
+          .toLowerCase()
+          .indexOf(value) > -1
+      );
+    });
+  });
+});

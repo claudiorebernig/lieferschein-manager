@@ -52,4 +52,5 @@ form.addEventListener('submit', function(e) {
   let recipes = JSON.parse(localStorage.getItem('recipeArray'));
   let newRecipes = [...recipes, newRecipe];
   localStorage.setItem('recipeArray', JSON.stringify(newRecipes));
+  window.location.href = 'index.html';
 });
