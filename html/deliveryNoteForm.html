@@ -13,15 +13,6 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
-      type="text/javascript"
-    ></script>
     <link
       href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
       rel="stylesheet"
@@ -55,7 +46,7 @@
     </nav>
     <div class="container">
       <div class="row back-row">
-        <a href="index.html" class="back-btn">Zurück</a>
+        <a href="deliveryNotes.html" class="back-btn">Zurück</a>
       </div>
       <div class="row form-head">
         <span class="pr-3"><h2>Neuer Lieferschein</h2></span>
@@ -66,15 +57,12 @@
           <div class="col-5">
             <div class="form-group">
               <label for="datepicker">Datum</label>
-              <input id="dateInput" />
+              <input id="dateInput" class="form-control" type="date" />
             </div>
             <div class="form-group">
               <label for="customerSelect">Kunde</label>
               <select class="form-control" id="customerInput">
                 <option selected>Kunden auswählen</option>
-                <option>Thomas</option>
-                <option>Hannes</option>
-                <option>Franz</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
@@ -89,52 +77,7 @@
                   <th scope="col">Anzahl</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Bagger</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput1"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="row">LKW</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput2"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="row">Schotter</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput3"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="row">Bohrmaschiene</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput4"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="articlesTableBody"></tbody>
             </table>
           </div>
         </div>
@@ -145,10 +88,12 @@
       @Tief- & Hochbau GMBH
     </footer>
 
-    <script src="../js/recipeForm.js"></script>
-    <script src="../js/localstorage.js"></script>
-
     <!-- Bootstrap Javscript-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -159,5 +104,8 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script src="../js/deliveryNote/deliveryNoteForm.js"></script>
+    <script src="../js/localstorage.js"></script>
   </body>
 </html>

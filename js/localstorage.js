@@ -140,16 +140,16 @@ function addNewDeliveryNote(newDeliveryNote) {
   newDeliveryNote['deliveryNoteId'] = getNextDeliveryNoteId();
   const deliveryNotes = getDeliveryNotes();
   const newDeliveryNotes = [...deliveryNotes, newDeliveryNote];
-  localStorage.setItem('devliveryNotesArray', JSON.stringify(newDeliveryNotes));
+  localStorage.setItem('deliveryNotesArray', JSON.stringify(newDeliveryNotes));
 }
 
 function removeDeliveryNote(id) {
   const deliveryNotes = getDeliveryNotes();
-
+  console.log(id);
   localStorage.setItem(
-    'devliveryNotesArray',
+    'deliveryNotesArray',
     JSON.stringify(
-      deliveryNotes.filter(deliveryNote => deliveryNote.deliveryNoteId !== id)
+      deliveryNotes.filter(deliveryNote => deliveryNote.deliveryNoteId != id)
     )
   );
 }
