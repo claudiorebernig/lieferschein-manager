@@ -55,88 +55,52 @@
     </nav>
     <div class="container">
       <div class="row back-row">
-        <a href="index.html" class="back-btn">Zurück</a>
+        <a href="customers.html" class="back-btn">Zurück</a>
       </div>
       <div class="row form-head">
-        <span class="pr-3"><h2>Neuer Lieferschein</h2></span>
+        <span class="pr-3"><h2>Neuer Kunde</h2></span>
       </div>
 
-      <form id="recipeForm">
+      <form id="customerForm">
         <div class="row">
           <div class="col-5">
             <div class="form-group">
-              <label for="datepicker">Datum</label>
-              <input id="dateInput" />
+              <label for="nameInput">Kundenname*</label>
+              <input type="text" class="form-control" id="nameInput" required />
             </div>
             <div class="form-group">
-              <label for="customerSelect">Kunde</label>
-              <select class="form-control" id="customerInput">
-                <option selected>Kunden auswählen</option>
-                <option>Thomas</option>
-                <option>Hannes</option>
-                <option>Franz</option>
-              </select>
+              <label for="placeInput">Ort*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="placeInput"
+                required
+              />
             </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              Lieferschein Speichern
-            </button>
           </div>
           <div class="col-6 offset-1">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Artikel</th>
-                  <th scope="col">Anzahl</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Bagger</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput1"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="row">LKW</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput2"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="row">Schotter</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput3"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="row">Bohrmaschiene</td>
-                  <td>
-                    <input
-                      class="text-center"
-                      id="articleInput4"
-                      type="number"
-                      placeholder="0"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="form-group">
+              <label for="streetInput">Straße*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="streetInput"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="postalInput">Postleitzahl*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="postalInput"
+                required
+              />
+            </div>
           </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Hinzufügen
+          </button>
         </div>
       </form>
     </div>
@@ -145,7 +109,7 @@
       @Tief- & Hochbau GMBH
     </footer>
 
-    <script src="../js/recipe-form.js"></script>
+    <script src="../js/customer-form.js"></script>
 
     <!-- Bootstrap Javscript-->
     <script

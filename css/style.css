@@ -54,6 +54,7 @@ table td {
   position: relative;
 }
 
+/* Alle inputs die in einer td und einer table sind */
 table td input {
   position: absolute;
   display: block;
@@ -75,4 +76,7 @@ footer {
   background-color: #fff;
   color: #333;
   padding: 1rem 1rem;
+}
+i {
+  cursor: pointer;
 }

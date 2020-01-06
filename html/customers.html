@@ -24,15 +24,14 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <!-- Navbar von Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="index.html">Lieferscheinmanager</a>
       <div class=" ml-auto" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="index.html">Lieferscheine</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="customers.html">Kundenverwaltung</a>
           </li>
           <li class="nav-item">
@@ -42,51 +41,27 @@
       </div>
     </nav>
 
-    <!-- Padding Top: 5rem (rem ~ px) -->
     <div class="container pt-5">
-      <!-- Überschrift mit Knopf -->
       <div class="row">
-        <span class="pr-3"><h2>Lieferscheine</h2></span>
-
-        <!-- Knopf mit Standard Bootstrap Styling -->
-        <a href="deliveryNoteForm.html" class="btn btn-primary btn-line-height">
-          Lieferschein Hinzufügen
+        <span class="pr-3"><h2>Kunden</h2></span>
+        <a href="customerForm.html" class="btn btn-primary btn-line-height">
+          Kunde Hinzufügen
         </a>
       </div>
-
-      <!-- Filter Suche -->
-      <div class="row">
-        <div class="col-4">
-          <div class="form-group row">
-            <label for="customerInput" class="col-sm-5 col-form-label"
-              >Daten suchen:</label
-            >
-            <div class="col-sm-7">
-              <input type="text" class="form-control" id="customerInput" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tabelle -->
       <div class="row">
         <div class="col-12">
           <table
             class="table table-striped table-bordered"
             id="deliveryNotesTable"
           >
-            <!-- Tabellen Überschrift -->
             <thead>
               <tr>
-                <th scope="col">Nummer</th>
-                <th scope="col">Bezahlt</th>
-                <th scope="col">Kunde</th>
-                <th scope="col">Datum</th>
-                <th scope="col">Beschreibung</th>
+                <th scope="col">Kundennummer</th>
+                <th scope="col">Name</th>
+                <th scope="col">Addresse</th>
                 <th scope="col">Optionen</th>
               </tr>
             </thead>
-            <!-- Body wo wir neue Zeilen hinzufügen mit JS -->
             <tbody id="tablebody"></tbody>
           </table>
         </div>
@@ -99,7 +74,6 @@
 
     <!-- Javascript PDF Generator -->
     <!-- https://github.com/MrRio/jsPDF -->
-    <!-- Nicht implemementiert -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
       integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
@@ -123,7 +97,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/customer.js"></script>
     <script src="../js/localstorage.js"></script>
   </body>
 </html>

@@ -52,14 +52,15 @@ let recipeArray = [
 ];
 
 function start() {
-  //localStorage.setItem('recipeIdCount', 3);
-  //localStorage.setItem('recipeArray', JSON.stringify(recipeArray));
+  /* SETUP */
 
-  let recipes = JSON.parse(localStorage.getItem('recipeArray'));
-  console.log(recipes);
-  let tablebody = $('#tablebody');
+  // localStorage.setItem('recipeIdCount', 3);
+  // localStorage.setItem('recipeArray', JSON.stringify(recipeArray));
 
-  for (recipe of recipes) {
+  const recipes = JSON.parse(localStorage.getItem('recipeArray'));
+  const tablebody = $('#tablebody');
+
+  for (let recipe of recipes) {
     let tablerow = `<tr>`;
     tablerow += `<th scope="row">${recipe.recipeId}</th>`;
     tablerow += `<td>${
@@ -78,8 +79,6 @@ function start() {
     tablerow += `<td>`;
     tablerow += `<i class="fas fa-lg fa-info-circle" style="color: #007bff;"></i>`;
     tablerow += `<i class="fas fa-lg fa-trash-alt" style="color: #dc3545"></i>`;
-    tablerow += `<i class="fas fa-lg fa-print"></i>`;
-    tablerow += `<i class="fas fa-lg fa-check-square" style="color: #28a745"></i>`;
     tablerow += ` </td>`;
     tablerow += ` </tr>`;
 
@@ -87,6 +86,7 @@ function start() {
   }
 }
 
+// Filter von Bootstrap bei Eingabe in das Suchfeld
 $(document).ready(function() {
   $('#customerInput').on('keyup', function() {
     var value = $(this)
