@@ -1,5 +1,4 @@
 window.addEventListener('load', () => {
-  /* FÜR SETUP */
   const customers = getCustomers();
 
   // Variable tablebody = dem DOM Objekt mit der ID tablebody
@@ -20,8 +19,3 @@ window.addEventListener('load', () => {
     $(tablerow).appendTo(tablebody);
   }
 });
-
-function deleteCustomer(e) {
-  removeCustomer(e.id);
-  $(`#row${e.id}`).remove();
-}

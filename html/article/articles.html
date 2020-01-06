@@ -25,7 +25,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="../deliveryNote//deliveryNotes.html"
+      <a class="navbar-brand" href="../deliveryNote/deliveryNotes.html"
         >Lieferscheinmanager</a
       >
       <div class=" ml-auto" id="navbarNav">
@@ -36,10 +36,12 @@
             >
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="customers.html">Kundenverwaltung</a>
+            <a class="nav-link" href="../customer/customers.html"
+              >Kundenverwaltung</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../article/articles.html">Stammdaten</a>
+            <a class="nav-link" href="articles.html">Stammdaten</a>
           </li>
         </ul>
       </div>
@@ -47,19 +49,21 @@
 
     <div class="container pt-5">
       <div class="row">
-        <span class="pr-3"><h2>Kunden</h2></span>
-        <a href="customerForm.html" class="btn btn-primary btn-line-height">
-          Kunde Hinzufügen
+        <span class="pr-3"><h2>Stammdaten</h2></span>
+        <a href="articleForm.html" class="btn btn-primary btn-line-height">
+          Stammdaten Hinzufügen
         </a>
       </div>
       <div class="row">
         <div class="col-12">
-          <table class="table table-striped table-bordered">
+          <table class="table table-striped table-bordered" id="customerTable">
             <thead>
               <tr>
-                <th scope="col">Kundennummer</th>
-                <th scope="col">Name</th>
-                <th scope="col">Addresse</th>
+                <th scope="col">Artikelnummer</th>
+                <th scope="col">Bezeichnung</th>
+                <th scope="col">Preis</th>
+                <th scope="col">Preis/Woche</th>
+                <th scope="col">Preis/Monat</th>
                 <th scope="col">Optionen</th>
               </tr>
             </thead>
@@ -99,6 +103,6 @@
     ></script>
 
     <script src="../../js/localstorage.js"></script>
-    <script src="../../js/customer/customers.js"></script>
+    <script src="../../js/article/articles.js"></script>
   </body>
 </html>

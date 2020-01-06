@@ -179,7 +179,7 @@ function removeCustomer(e) {
   const customers = getCustomers();
 
   localStorage.setItem(
-    'customerArray',
+    'customersArray',
     JSON.stringify(customers.filter(customer => customer.customerId != e.id))
   );
 
@@ -202,14 +202,14 @@ function addNewArticle(newArticle) {
   newArticle['articleId'] = getNextArticleId();
   const articles = getArticles();
   const newArticles = [...articles, newArticle];
-  localStorage.setItem('articleArray', JSON.stringify(newArticles));
+  localStorage.setItem('articlesArray', JSON.stringify(newArticles));
 }
 
 function removeArticle(e) {
   const articles = getArticles();
 
   localStorage.setItem(
-    'articleArray',
+    'articlesArray',
     JSON.stringify(articles.filter(article => article.articleId != e.id))
   );
 
