@@ -20,21 +20,13 @@ window.addEventListener('load', () => {
     }
     tablerow += `</td>`;
     tablerow += `<td>`;
-    tablerow += `<i id="${deliveryNote.deliveryNoteId}" class="fas fa-lg fa-trash-alt" style="color: #dc3545" onclick="deleteDeliveryNote(this)"></i>`;
+    tablerow += `<i id="${deliveryNote.deliveryNoteId}" class="fas fa-lg fa-trash-alt" style="color: #dc3545" onclick="removeDeliveryNote(this)"></i>`;
     tablerow += ` </td>`;
     tablerow += ` </tr>`;
 
     $(tablerow).appendTo(tablebody);
   }
 });
-
-function deleteDeliveryNote(e) {
-  console.log(getDeliveryNotes());
-  removeDeliveryNote(e.id);
-  console.log(getDeliveryNotes());
-  $(`#row${e.id}`).remove();
-}
-
 // Filter von Bootstrap bei Eingabe in das Suchfeld
 $(document).ready(function() {
   $('#customerInput').on('keyup', function() {

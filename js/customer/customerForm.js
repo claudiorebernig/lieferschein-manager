@@ -8,17 +8,11 @@ const postalNumber = document.getElementById('postalInput');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const newCustomerId = JSON.parse(localStorage.getItem('customerIdCount')) + 1;
-  localStorage.setItem('customerIdCount', newCustomerId);
-
   const newCustomer = {
-    customerId: newCustomerId,
     name: name.value,
     address: `${street.value}, ${postalNumber.value} ${place.value}`
   };
 
-  const customers = JSON.parse(localStorage.getItem('customerArray'));
-  const newCustomers = [...customers, newCustomer];
-  localStorage.setItem('customerArray', JSON.stringify(newCustomers));
+  addNewCustomer(newCustomer);
   window.location.href = 'customers.html';
 });

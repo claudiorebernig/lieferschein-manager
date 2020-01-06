@@ -143,15 +143,17 @@ function addNewDeliveryNote(newDeliveryNote) {
   localStorage.setItem('deliveryNotesArray', JSON.stringify(newDeliveryNotes));
 }
 
-function removeDeliveryNote(id) {
+function removeDeliveryNote(e) {
   const deliveryNotes = getDeliveryNotes();
-  console.log(id);
+
   localStorage.setItem(
     'deliveryNotesArray',
     JSON.stringify(
-      deliveryNotes.filter(deliveryNote => deliveryNote.deliveryNoteId != id)
+      deliveryNotes.filter(deliveryNote => deliveryNote.deliveryNoteId != e.id)
     )
   );
+
+  $(`#row${e.id}`).remove();
 }
 
 // Kunden
@@ -173,13 +175,15 @@ function addNewCustomer(newCustomer) {
   localStorage.setItem('customersArray', JSON.stringify(newCustomers));
 }
 
-function removeCustomer(id) {
+function removeCustomer(e) {
   const customers = getCustomers();
 
   localStorage.setItem(
     'customerArray',
     JSON.stringify(customers.filter(customer => customer.customerId != e.id))
   );
+
+  $(`#row${e.id}`).remove();
 }
 
 // Stammdaten
@@ -201,11 +205,13 @@ function addNewArticle(newArticle) {
   localStorage.setItem('articleArray', JSON.stringify(newArticles));
 }
 
-function removeArticle(id) {
+function removeArticle(e) {
   const articles = getArticles();
 
   localStorage.setItem(
     'articleArray',
-    JSON.stringify(articles.filter(article => article.articleId != id))
+    JSON.stringify(articles.filter(article => article.articleId != e.id))
   );
+
+  $(`#row${e.id}`).remove();
 }

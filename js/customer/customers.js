@@ -1,8 +1,6 @@
-window.addEventListener('load', start);
-
-function start() {
+window.addEventListener('load', () => {
   /* FÜR SETUP */
-  let customers = JSON.parse(localStorage.getItem('customerArray'));
+  const customers = getCustomers();
 
   // Variable tablebody = dem DOM Objekt mit der ID tablebody
   const tablebody = $('#tablebody');
@@ -13,7 +11,6 @@ function start() {
     tablerow += `<td>${customer.name}</td>`;
     tablerow += `<td>${customer.address}</td>`;
     tablerow += `<td>`;
-    tablerow += `<i class="fas fa-lg fa-info-circle" style="color: #007bff;"></i>`;
     tablerow += `<i id="${customer.customerId}" class="fas fa-lg fa-trash-alt" style="color: #dc3545" onclick="removeCustomer(this)"></i>`;
     tablerow += `<i class="fas fa-lg fa-print"></i>`;
     tablerow += ` </td>`;
@@ -22,15 +19,9 @@ function start() {
     // Die neue Tabellenzeile hinzufügen
     $(tablerow).appendTo(tablebody);
   }
-}
+});
 
-function removeCustomer(e) {
-  let customers = JSON.parse(localStorage.getItem('customerArray'));
-
-  localStorage.setItem(
-    'customerArray',
-    JSON.stringify(customers.filter(customer => customer.customerId != e.id))
-  );
-
+function deleteCustomer(e) {
+  removeCustomer(e.id);
   $(`#row${e.id}`).remove();
 }
