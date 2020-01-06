@@ -25,61 +25,77 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">Lieferscheinmanager</a>
+      <a class="navbar-brand" href="../deliveryNote/deliveryNotes.html"
+        >Lieferscheinmanager</a
+      >
       <div class=" ml-auto" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Lieferscheine</a>
+            <a class="nav-link" href="../deliveryNote/deliveryNotes.html"
+              >Lieferscheine</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="customers.html">Kundenverwaltung</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Stammdaten</a>
+            <a class="nav-link" href="../article/articles.html">Stammdaten</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="container">
       <div class="row back-row">
-        <a href="deliveryNotes.html" class="back-btn">Zurück</a>
+        <a href="customers.html" class="back-btn">Zurück</a>
       </div>
       <div class="row form-head">
-        <span class="pr-3"><h2>Neuer Lieferschein</h2></span>
+        <span class="pr-3"><h2>Neuer Kunde</h2></span>
       </div>
 
-      <form id="recipeForm">
+      <form id="customerForm">
         <div class="row">
           <div class="col-5">
             <div class="form-group">
-              <label for="datepicker">Datum</label>
-              <input id="dateInput" class="form-control" type="date" />
+              <label for="nameInput">Kundenname*</label>
+              <input type="text" class="form-control" id="nameInput" required />
             </div>
             <div class="form-group">
-              <label for="customerSelect">Kunde</label>
-              <select class="form-control" id="customerInput">
-                <option selected>Kunden auswählen</option>
-              </select>
+              <label for="placeInput">Ort*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="placeInput"
+                required
+              />
             </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              Lieferschein Speichern
-            </button>
           </div>
           <div class="col-6 offset-1">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Artikel</th>
-                  <th scope="col">Anzahl</th>
-                </tr>
-              </thead>
-              <tbody id="articlesTableBody"></tbody>
-            </table>
+            <div class="form-group">
+              <label for="streetInput">Straße*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="streetInput"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="postalInput">Postleitzahl*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="postalInput"
+                required
+              />
+            </div>
           </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Hinzufügen
+          </button>
         </div>
       </form>
     </div>
@@ -95,6 +111,10 @@
       crossorigin="anonymous"
     ></script>
     <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"
@@ -105,7 +125,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../js/deliveryNote/deliveryNoteForm.js"></script>
-    <script src="../js/localstorage.js"></script>
+    <script src="../../js/localstorage.js"></script>
+    <script src="../../js/customer/customerForm.js"></script>
   </body>
 </html>
