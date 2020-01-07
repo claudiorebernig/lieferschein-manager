@@ -1,0 +1,24 @@
+{
+  "name": "lieferschein-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiorebernig/lieferschein-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiorebernig/lieferschein-manager/issues"
+  },
+  "homepage": "https://github.com/claudiorebernig/lieferschein-manager#readme",
+  "devDependencies": {
+    "electron": "^7.1.7",
+    "electron-packager": "^14.1.1"
+  }
+}
