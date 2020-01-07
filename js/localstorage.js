@@ -28,6 +28,7 @@ const deliveryNoteArray = [
     payed: true,
     date: '15.10.2019',
     customer: 'Thomas',
+    customerId: 1,
     articles: [
       {
         name: 'Bagger',
@@ -44,6 +45,7 @@ const deliveryNoteArray = [
     payed: true,
     date: '12.10.2019',
     customer: 'Hannes',
+    customerId: 3,
     articles: [
       {
         name: 'Schotter',
@@ -60,6 +62,7 @@ const deliveryNoteArray = [
     payed: false,
     date: '10.10.2019',
     customer: 'Thomas',
+    customerId: 1,
     articles: [
       {
         name: 'LKW',
@@ -214,4 +217,17 @@ function removeArticle(e) {
   );
 
   $(`#row${e.id}`).remove();
+}
+
+// Printing
+
+function getCustomer(customerId) {
+  return getCustomers().filter(customer => customer.customerId == customerId);
+}
+
+function getAllOpenDeliveryNotesFromCustomer(customerId) {
+  return getDeliveryNotes().filter(
+    deliveryNote =>
+      deliveryNote.customerId == customerId && deliveryNote.payed == false
+  );
 }
